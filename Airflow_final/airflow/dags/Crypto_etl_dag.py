@@ -6,8 +6,7 @@ from dotenv import load_dotenv
 import pandas as pd
 from Preentrega3 import get_top_10_crypto_data, cargar_datos
 
-# Especificar la ruta completa al archivo .env
-dotenv_path = 'C:\\Users\gaspi\\Desktop\\Airflow_final\\.env'
+dotenv_path = ''
 
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv(dotenv_path)
@@ -30,7 +29,7 @@ dag = DAG(
     schedule_interval='@daily',
 )
 
-# Definir la tarea de obtener datos
+# Definir obtener datos
 def obtener_datos():
     top_10_crypto_data = get_top_10_crypto_data()
     return pd.DataFrame(top_10_crypto_data)
@@ -41,7 +40,7 @@ obtener_datos_task = PythonOperator(
     dag=dag,
 )
 
-# Definir la tarea de cargar datos
+# Definir cargar datos
 def cargar_datos_func(crypto_df, conn):
     cargar_datos(crypto_df, conn)
 
