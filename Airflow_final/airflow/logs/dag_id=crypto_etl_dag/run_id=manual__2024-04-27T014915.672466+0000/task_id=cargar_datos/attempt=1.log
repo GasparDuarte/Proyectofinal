@@ -1,0 +1,19 @@
+[2024-04-27T01:49:48.475+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-27T01:49:48.514+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_etl_dag.cargar_datos manual__2024-04-27T01:49:15.672466+00:00 [queued]>
+[2024-04-27T01:49:48.532+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_etl_dag.cargar_datos manual__2024-04-27T01:49:15.672466+00:00 [queued]>
+[2024-04-27T01:49:48.533+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-27T01:49:48.606+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): cargar_datos> on 2024-04-27 01:49:15.672466+00:00
+[2024-04-27T01:49:48.615+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'crypto_etl_dag', 'cargar_datos', 'manual__2024-04-27T01:49:15.672466+00:00', '--job-id', '74', '--raw', '--subdir', 'DAGS_FOLDER/Crypto_etl_dag.py', '--cfg-path', '/tmp/tmp6hwic00w']
+[2024-04-27T01:49:48.617+0000] {standard_task_runner.py:91} INFO - Job 74: Subtask cargar_datos
+[2024-04-27T01:49:48.623+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=81) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-27T01:49:48.624+0000] {standard_task_runner.py:63} INFO - Started process 86 to run task
+[2024-04-27T01:49:48.720+0000] {task_command.py:426} INFO - Running <TaskInstance: crypto_etl_dag.cargar_datos manual__2024-04-27T01:49:15.672466+00:00 [running]> on host e15c97520e84
+[2024-04-27T01:49:49.139+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='crypto_etl_dag' AIRFLOW_CTX_TASK_ID='cargar_datos' AIRFLOW_CTX_EXECUTION_DATE='2024-04-27T01:49:15.672466+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-27T01:49:15.672466+00:00'
+[2024-04-27T01:49:49.141+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-27T01:49:49.158+0000] {logging_mixin.py:188} INFO - Error al cargar datos en la base de datos: 'NoneType' object has no attribute 'cursor'
+[2024-04-27T01:49:49.158+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-27T01:49:49.159+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-27T01:49:49.174+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=crypto_etl_dag, task_id=cargar_datos, execution_date=20240427T014915, start_date=20240427T014948, end_date=20240427T014949
+[2024-04-27T01:49:49.240+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-27T01:49:49.276+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-27T01:49:49.279+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
