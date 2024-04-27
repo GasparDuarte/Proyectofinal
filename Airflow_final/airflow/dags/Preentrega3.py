@@ -1,4 +1,4 @@
-#Importando bibliotecas
+
 import requests
 import json
 import psycopg2
@@ -69,11 +69,11 @@ def cargar_datos(crypto_df, conn):
     except Exception as e:
         print(f"Error al cargar datos en la base de datos: {e}")
 
-# Especificar la ruta completa al archivo .env
+
 dotenv_path = 'C:\\Users\gaspi\\Desktop\\Airflow_final\\.env'
 
 
-# Cargar las variables de entorno desde el archivo .env
+# Cargar las variables de entorno 
 load_dotenv(dotenv_path)
 
 # Obtener las credenciales de la base de datos 
