@@ -1,0 +1,24 @@
+Requisitos previos
+1-Docker Desktop instalado en tu máquina.
+2-Cuenta de Google para configurar las notificaciones por correo electrónico.
+
+Instrucciones de configuración
+1-Construir la imagen de Docker:
+Abre una terminal y navega hasta la carpeta raíz del proyecto.
+Ejecuta el siguiente comando para construir la imagen de Docker utilizando el Dockerfile proporcionado: docker build -t airflow .
+
+2-Crear y ejecutar el contenedor de Docker:
+Una vez que la imagen se haya construido correctamente, 
+ejecuta el siguiente comando para crear y ejecutar el contenedor utilizando Docker Compose: docker-compose up -d
+
+3-Agregar los archivos DAG:
+Coloca los archivos .py del DAG (Crypto_etl_dag.py) y sus dependencias (como Preentrega3.py) en la carpeta dags del proyecto Airflow.
+
+4-Configurar las notificaciones por correo electrónico:
+Abre el archivo airflow.cfg en la carpeta config del proyecto Airflow.
+Reemplaza la configuración de smtp_user con tu dirección de correo electrónico.
+Genera una contraseña de aplicación de Google y colócala como el valor de smtp_password.
+
+
+
+
