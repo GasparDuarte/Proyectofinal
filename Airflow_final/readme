@@ -37,6 +37,7 @@ Coloca los archivos .py del DAG (Crypto_etl_dag.py) y sus dependencias (como Pre
 Abre el archivo airflow.cfg en la carpeta config del proyecto Airflow.
 Reemplaza la configuración de smtp_user con tu dirección de correo electrónico.
 Genera una contraseña de aplicación de Google y colócala como el valor de smtp_password.
+Por ultimo en la linea 58 del codigo de Crypto_etl_dag.py agregar la direccion de mail a la que quiera que llegue la notificacion.
 
 Ejecucion del proyecto
 Una vez completada la configuracion, acceder a airflow en http://localhost:8080. 
