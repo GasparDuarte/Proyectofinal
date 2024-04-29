@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.email_operator import EmailOperator
 import os
 from dotenv import load_dotenv
 import pandas as pd
@@ -51,6 +52,16 @@ cargar_datos_task = PythonOperator(
     dag=dag,
 )
 
+# Definir notificacion mail
+email_notification = EmailOperator(
+    task_id='email_notification',
+    to='gasparduarte.jbs@gmail.com',
+    subject='DAG Execution Failed',
+    html_content='The DAG execution has failed and is being retried.',
+    dag=dag
+)
+
+
 # Definir las dependencias entre tareas
-obtener_datos_task >> cargar_datos_task
+obtener_datos_task >> cargar_datos_task >> email_notification
 
