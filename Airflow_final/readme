@@ -19,6 +19,12 @@ Abre el archivo airflow.cfg en la carpeta config del proyecto Airflow.
 Reemplaza la configuración de smtp_user con tu dirección de correo electrónico.
 Genera una contraseña de aplicación de Google y colócala como el valor de smtp_password.
 
+Ejecucion del proyecto
+Una vez completada la configuracion, acceder a airflow en http://localhost:8080. 
+Nombre de usuario: admin 
+Contraseña: Se encuentra en el archivo "standalone_admin_password.txt" (creado despues del docker-compose up -d)
+
+
 
 
 
