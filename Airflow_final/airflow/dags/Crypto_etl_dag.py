@@ -55,7 +55,7 @@ cargar_datos_task = PythonOperator(
 # Definir notificacion mail
 email_notification = EmailOperator(
     task_id='email_notification',
-    to='gasparduarte.jbs@gmail.com',
+    to='ejemplomail@gmail.com',
     subject='DAG Execution Failed',
     html_content='The DAG execution has failed and is being retried.',
     dag=dag
