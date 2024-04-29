@@ -70,7 +70,7 @@ def cargar_datos(crypto_df, conn):
         print(f"Error al cargar datos en la base de datos: {e}")
 
 
-dotenv_path = 'C:\\Users\gaspi\\Desktop\\Airflow_final\\.env'
+dotenv_path = ''
 
 
 # Cargar las variables de entorno 
